@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.penglecode.mybatis.ex.test.bean.ChildOrderMapper">
+
+	<insert id="insertChildOrder" parameterType="ChildOrder" statementType="PREPARED">
+		INSERT INTO t_child_order(
+			order_id,
+			main_order_id,
+			product_id,
+			product_name,
+			unit_price,
+			buy_num,
+			freight,
+			sub_total,
+			order_time
+		) VALUES (
+			#{orderId, jdbcType=BIGINT},
+			#{mainOrderId, jdbcType=BIGINT},
+			#{productId, jdbcType=BIGINT},
+			#{productName, jdbcType=VARCHAR},
+			#{unitPrice, jdbcType=NUMERIC},
+			#{buyNum, jdbcType=INTEGER},
+			#{freight, jdbcType=NUMERIC},
+			#{subTotal, jdbcType=NUMERIC},
+			#{orderTime, jdbcType=VARCHAR}
+		)
+	</insert>
+</mapper>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--设置log4j2的自身log级别为debug, 120秒自动扫描加载更改 -->
+<configuration status="OFF" monitorInterval="120">
+	<appenders>
+		<console name="CONSOLE" target="SYSTEM_OUT">
+			<PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss,SSS} [%-5p] [%l] %m%n"/>
+		</console>
+
+		<RollingFile name="FILE" fileName="d:/logs/mybatis-ex.log" filePattern="d:/logs/mybatis-ex_%d{yyyy-MM-dd}_%i.log">
+			<Filters>
+				<ThresholdFilter level="DEBUG" />
+			</Filters>
+			<PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss,SSS} [%-5p] [%l] %m%n" />
+			<Policies>
+				<TimeBasedTriggeringPolicy />
+				<SizeBasedTriggeringPolicy size="25 MB" />
+			</Policies>
+		</RollingFile>
+
+	</appenders>
+
+	<loggers>
+		<logger name="org.apache.ibatis" level="ERROR"/>
+		<logger name="org.mybatis" level="ERROR"/>
+		<logger name="org.apache.commons" level="ERROR"/>
+		<logger name="org.springframework" level="INFO"/>
+		
+		<logger name="com.penglecode.mybatis" level="ERROR"/>
+		
+		<root level="DEBUG">
+			<appender-ref ref="CONSOLE"/>
+			<appender-ref ref="FILE"/>
+		</root>
+	</loggers>
+
+</configuration>

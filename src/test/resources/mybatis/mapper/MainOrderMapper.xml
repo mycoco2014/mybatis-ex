@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.penglecode.mybatis.ex.test.bean.MainOrderMapper">
+
+	<insert id="insertMainOrder" parameterType="MainOrder" statementType="PREPARED">
+		INSERT INTO t_main_order(
+			order_id,
+			user_id,
+			total_money,
+			discount,
+			total_freight,
+			order_time,
+			status
+		) VALUES (
+			#{orderId, jdbcType=BIGINT},
+			#{userId, jdbcType=BIGINT},
+			#{totalMoney, jdbcType=NUMERIC},
+			#{discount, jdbcType=NUMERIC},
+			#{totalFreight, jdbcType=NUMERIC},
+			#{orderTime, jdbcType=VARCHAR},
+			#{status, jdbcType=VARCHAR}
+		)
+	</insert>
+</mapper>
