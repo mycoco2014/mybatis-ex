@@ -1,6 +1,8 @@
 ##Introduction
 
-	这个项目是基于mybatis、mybatis-spring的扩展，主要用来解决：'Cannot change the ExecutorType when there is an existing transaction'异常的！即：在同一个Session中不能动态切换ExecutorType的问题！
+	这个项目是基于mybatis、mybatis-spring的扩展，主要用来解决：
+	'Cannot change the ExecutorType when there is an existing transaction'异常的！
+	即：在同一个Session中不能动态切换ExecutorType的问题！
 
 ##Maven
 	构件已经被发布到Maven中央库中：
