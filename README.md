@@ -1,8 +1,18 @@
 ##Introduction
 
-	This project is an extension of mybatis by using dynamic executor bound with current thread 
-	to solve 'Cannot change the ExecutorType when there is an existing transaction' 
-	for mybatis-spring project.
+	这个项目是基于mybatis、mybatis-spring的扩展，主要用来解决：'Cannot change the ExecutorType when there is an existing transaction'异常的！即：在同一个Session中不能动态切换ExecutorType的问题！
+
+##Maven
+	构件已经被发布到Maven中央库中：
+
+	版本1.0.0 支持mybatis 3.2|3.3版本
+	版本1.0.1 支持mybatis 3.4版本	
+	
+	<dependency>
+		<groupId>com.github.penggle</groupId>
+		<artifactId>mybatis-ex</artifactId>
+		<version>1.0.1</version>
+	</dependency>
 
 ##Example
 
